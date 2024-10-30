@@ -1,0 +1,51 @@
+﻿@page
+@model SupermarketWEB.Pages.Products.CreateModel
+@{
+	ViewData["Title"] = "Create";
+}
+<h1>Create</h1>
+<h4>Products</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="Products.Name" class="control-label"></label>
+				<input asp-for="Products.Name" class="form-control" />
+				<span asp-validation-for="Products.Name" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Products.Price" class="control-label"></label>
+				<input asp-for="Products.Price" class="form-control" />
+				<span asp-validation-for="Products.Price" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Products.Stock" class="control-label"></label>
+				<input asp-for="Products.Stock" class="form-control" />
+				<span asp-validation-for="Products.Stock" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Products.CategoryId" class="control-label"></label>
+				<input asp-for="Products.CategoryId" class="form-control" />
+				<span asp-validation-for="Products.CategoryId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Products.Category" class="control-label"></label>
+				<input asp-for="Products.Category" class="form-control" />
+				<span asp-validation-for="Products.Category" class="text-danger"></span>
+			</div>
+		    
+			<div class="form-group mt-3">
+				<input type="submit" value="Create" class="btn btn-success" />
+				<a asp-page="Index" class="btn btn-primary">Back to List</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
