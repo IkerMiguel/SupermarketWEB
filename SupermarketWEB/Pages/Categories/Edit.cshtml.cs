@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +8,8 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace SupermarketWEB.Pages.Categories
 {
-    public class EditModel : PageModel
+	[Authorize]
+	public class EditModel : PageModel
     {
         private readonly SupermarketContext _context;
 
